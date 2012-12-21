@@ -90,3 +90,12 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Libraries
 Bundle 'L9'
 Bundle 'tpope/vim-repeat'
+" Munho.begin
+Bundle 'maksimr/vim-jsbeautify' 
+Bundle 'einars/js-beautify' 
+" set path to js-beautify file 
+let g:jsbeautify_file = fnameescape(fnamemodify(expand("<sfile>"), ":h")."/bundle/js-beautify/beautify.js")
+let g:jsbeautify_engine = "node"
+map <c-f> :call JsBeautify()<cr>
+" Munho.end
+
