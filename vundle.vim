@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 " ---------------
 
 " Navigation
-Bundle 'ZoomWin'
+"Bundle 'ZoomWin'
 " This fork is required due to remapping ; to :
 Bundle 'christoomey/vim-space'
 Bundle 'Lokaltog/vim-easymotion'
@@ -36,16 +36,16 @@ Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'AndrewRadev/sideways.vim'
-Bundle 'keepcase.vim'
-Bundle 'scratch.vim'
+"Bundle 'keepcase.vim'
+"Bundle 'scratch.vim'
 Bundle 'mattn/zencoding-vim'
-Bundle 'mutewinter/GIFL'
-Bundle 'swaroopch/vim-markdown-preview'
+"Bundle 'mutewinter/GIFL'
+"Bundle 'swaroopch/vim-markdown-preview'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'tpope/vim-eunuch'
 Bundle 'itspriddle/vim-marked'
 Bundle 'mutewinter/UnconditionalPaste'
-Bundle 'skalnik/vim-vroom'
+"Bundle 'skalnik/vim-vroom'
 Bundle 'HelpClose'
 " Automatic Helpers
 Bundle 'IndexedSearch'
@@ -57,10 +57,10 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'Shougo/neocomplcache'
 " Language Additions
 "   Ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
+"Bundle 'vim-ruby/vim-ruby'
+"Bundle 'tpope/vim-haml'
+"Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-rake'
 "   JavaScript
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -70,19 +70,19 @@ Bundle 'nono/vim-handlebars'
 Bundle 'othree/html5.vim'
 Bundle 'indenthtml.vim'
 "   TomDoc
-Bundle 'mutewinter/tomdoc.vim'
-Bundle 'jc00ke/vim-tomdoc'
+"Bundle 'mutewinter/tomdoc.vim'
+"Bundle 'jc00ke/vim-tomdoc'
 "   Other Languages
-Bundle 'msanders/cocoa.vim'
-Bundle 'mutewinter/taskpaper.vim'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'timcharper/textile.vim'
+"Bundle 'msanders/cocoa.vim'
+"Bundle 'mutewinter/taskpaper.vim'
+"Bundle 'mutewinter/nginx.vim'
+"Bundle 'timcharper/textile.vim'
 Bundle 'mutewinter/vim-css3-syntax'
-Bundle 'acustodioo/vim-tmux'
-Bundle 'mutewinter/vim-markdown'
+"Bundle 'acustodioo/vim-tmux'
+"Bundle 'mutewinter/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'wavded/vim-stylus'
-Bundle 'tpope/vim-cucumber'
+"Bundle 'tpope/vim-cucumber'
 " MatchIt
 Bundle 'matchit.zip'
 Bundle 'kana/vim-textobj-user'
@@ -90,12 +90,16 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Libraries
 Bundle 'L9'
 Bundle 'tpope/vim-repeat'
+"
 " Munho.begin
+" vim-jsbeautify
+" http://www.vim.org/scripts/script.php?script_id=4017
 Bundle 'maksimr/vim-jsbeautify' 
 Bundle 'einars/js-beautify' 
 " set path to js-beautify file 
 let g:jsbeautify_file = fnameescape(fnamemodify(expand("<sfile>"), ":h")."/bundle/js-beautify/beautify.js")
 let g:jsbeautify_engine = "node"
 map <c-f> :call JsBeautify()<cr>
+"
 " Munho.end
 

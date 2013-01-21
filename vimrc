@@ -15,10 +15,12 @@ source ~/.vim/platforms.vim
 " All of the Vim configuration.
 source ~/.vim/config.vim
 " All hotkeys, not depedant on plugins, are bound here.
-source ~/.vim/bindings.vim
+"source ~/.vim/bindings.vim
 " Plugin-specific configuration.
 source ~/.vim/plugin_config.vim
 " Small custom functions.
 source ~/.vim/functions.vim
 " Auto commands.
 source ~/.vim/autocmds.vim
+" munho
+source ~/.vim/munho.vim
