@@ -92,6 +92,7 @@ Bundle 'L9'
 Bundle 'tpope/vim-repeat'
 "
 " Munho.begin
+Bundle 'Valloric/YouCompleteMe'
 " vim-jsbeautify
 " http://www.vim.org/scripts/script.php?script_id=4017
 Bundle 'maksimr/vim-jsbeautify' 
