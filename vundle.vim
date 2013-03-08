@@ -91,7 +91,11 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'L9'
 Bundle 'tpope/vim-repeat'
 "
-" Munho.begin
+" ------------------------------------------------------Munho.begin
+" http://majutsushi.github.com/tagbar/
+Bundle 'Tagbar'
+nmap <F8> :TagbarToggle<CR>
+" YouCompleteMe
 Bundle 'Valloric/YouCompleteMe'
 " vim-jsbeautify
 " http://www.vim.org/scripts/script.php?script_id=4017
@@ -102,5 +106,5 @@ let g:jsbeautify_file = fnameescape(fnamemodify(expand("<sfile>"), ":h")."/bundl
 let g:jsbeautify_engine = "node"
 map <c-f> :call JsBeautify()<cr>
 "
-" Munho.end
+" ------------------------------------------------------Munho.end
 
