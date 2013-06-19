@@ -5,8 +5,8 @@
 " ---------------
 " Color
 " ---------------
-set background=dark
-colorscheme macvim
+"set background=dark
+colorscheme jellybeans
 
 " -----------------------------
 " Backups, Tmp Files, and Undo
