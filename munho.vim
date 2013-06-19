@@ -5,3 +5,8 @@ function! Browser ()
         exec "!netscape ".line
       endfunction
       map <Leader>w :call Browser ()<CR>
+
+" https://github.com/majutsushi/tagbar/wiki
+"let g:tagbar_type_javascript = {
+"    \ 'ctagsbin' : '/usr/local/bin/jsctags'
+"\ }

@@ -116,7 +116,7 @@ nmap <Leader>gx :wincmd h<CR>:q<CR>
 " Zoomwin
 " ---------------
 " Zoom Window to Full Size
-nmap <silent> <leader>wo :ZoomWin<CR>
+"nmap <silent> <leader>wo :ZoomWin<CR>
 
 " ---------------
 " ctrlp.vim
@@ -213,7 +213,7 @@ let g:html_indent_style1 = "inc"
 " ---------------
 " vim-markdown
 " ---------------
-let g:vim_markdown_folding_disabled=1
+"let g:vim_markdown_folding_disabled=1
 
 " ---------------
 " Unconditional Paste

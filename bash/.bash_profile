@@ -125,4 +125,10 @@ for f in $(command ls ~/.node-completion); do
 done
 # }}}
 
+#
+#
+#
+api_key="AIzaSyAuh3i8oKxEFVqMZH0TtJVhzm7iCyZjv8I"
+
+export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/mysql/lib
 
