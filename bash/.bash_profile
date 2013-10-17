@@ -2,6 +2,8 @@
 export ANDROID_SDK=/Developer/adt-bundle-mac-x86_64/sdk
 export ANDROID_NDK=/Developer/adt-bundle-mac-x86_64/ndk
 export ANDROID_HOME=$ANDROID_SDK
+export ANDROID_SDK_HOME=$ANDROID_SDK
+export ANDROID_NDK_ROOT=$ANDROID_NDK
 export SDK=$ANDROID_SDK
 export NDK=$ANDROID_NDK
 export PATH=~/bin:/usr/local/bin:$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
@@ -12,6 +14,8 @@ export TARGET_DEVICE=arm_v7
 
 # cocos2d-x
 export NDK_ROOT=$ANDROID_NDK
+
+export NODE_PATH="/usr/local/lib/node_modules"
 
 ########
 # mysql
@@ -29,6 +33,17 @@ export PATH=$PATH:/usr/local/share/npm/bin
 # chromium
 ####
 export PATH=$PATH:~/bin/depot_tools
+
+########
+# http://www.orzota.com/single-node-hadoop-setup-2/
+#
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_OPTS=-Xmx1024M
+export HADOOP_HOME=/usr/local/Cellar/hadoop/1.2.1
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HADOOP_SLAVES=$HADOOP_HOME/conf/slaves
+export PATH=$HADOOP_HOME/bin:$PATH
+export HERITRIX_HOME=/trunk/bot/heritrix-3.1.1
 
 
 ########
@@ -92,7 +107,7 @@ alias cd....="cd ../../.."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cd-src="cd /Volumes/SRC"
+alias cd-droid="cd /Volumes/DROID"
 alias cd-project="cd ~/Documents/projects"
 
 # Java tool 한글 깨짐
@@ -130,5 +145,13 @@ done
 #
 api_key="AIzaSyAuh3i8oKxEFVqMZH0TtJVhzm7iCyZjv8I"
 
-export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/mysql/lib
+#export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/mysql/lib
 
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# added by Anaconda 1.6.1 installer
+export PATH="/Users/munho/anaconda/bin:$PATH"
