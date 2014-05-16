@@ -84,7 +84,7 @@ show_repository ()
 # the "kp" alias ("que pasa"), in honor of tony p.
 #alias kp="ps auxwww"
 
-alias ss="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &"
+#alias ss="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &"
 
 # file:///Developer/SDKs/android-ndk-r6/docs/NDK-STACK.html
 alias al="adb logcat bad:V *:E"
@@ -182,10 +182,6 @@ done
 #
 api_key="AIzaSyAuh3i8oKxEFVqMZH0TtJVhzm7iCyZjv8I"
 
-
-# added by Anaconda 1.6.1 installer
-export PATH="/Users/munho/anaconda/bin:$PATH"
-
 #
 # See: https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python
 #
@@ -194,3 +190,10 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # https://github.com/gcuisinier/jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# added by Anaconda 1.9.1 installer
+#export PATH="/Users/munho/anaconda/bin:$PATH"
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/munho/Downloads/cocos2d-x-3.0rc1/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH

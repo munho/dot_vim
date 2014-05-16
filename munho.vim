@@ -18,3 +18,8 @@ function! Browser ()
 " ---------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" ---------------
+" http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
+" ---------------	
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
