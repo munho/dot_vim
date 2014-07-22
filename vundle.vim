@@ -98,7 +98,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'Tagbar'
 nmap <F8> :TagbarToggle<CR>
 " YouCompleteMe
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " vim-jsbeautify
 " http://www.vim.org/scripts/script.php?script_id=4017
 Bundle 'maksimr/vim-jsbeautify' 

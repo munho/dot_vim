@@ -3,7 +3,7 @@
 # http://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula
 #
 export ANDROID_SDK=/usr/local/opt/android-sdk
-export ANDROID_NDK=/usr/local/Cellar/android-ndk/r8e
+export ANDROID_NDK=/usr/local/opt/android-ndk
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_SDK_HOME=$ANDROID_SDK
 export ANDROID_NDK_ROOT=$ANDROID_NDK
@@ -122,9 +122,12 @@ alias jar='java -Dfile.encoding=utf8 sun.tools.jar.Main '
 alias keytool='java -Dfile.encoding=utf8 sun.security.tools.KeyTool '
 
 # mount the android file image
+# hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
 #function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
-function mountdroid { hdiutil attach "/Volumes/My\ Book/android.dmg.sparseimage" -mountpoint /Volumes/DROID; }
-#
+#function mount-droid { hdiutil attach "/Volumes/My\ Book/android.dmg" -mountpoint /Volumes/DROID; }
+#function mount-trunk { hdiutil attach "/Volumes/My\ Book/trunk.dmg.sparseimage" -mountpoint /Volumes/TRUNK; }
+function mount-droid { hdiutil attach /Volumes/My\ Book/android.dmg.sparseimage; }
+function mount-trunk { hdiutil attach /Volumes/My\ Book/trunk.dmg.sparseimage; }
 
 ##
 # ssh
@@ -195,5 +198,9 @@ eval "$(jenv init -)"
 #export PATH="/Users/munho/anaconda/bin:$PATH"
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/munho/Downloads/cocos2d-x-3.0rc1/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=/Users/munho/Desktop/Playground/cocos/cocos2d-x-3.2rc0/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable ANT_ROOT for cocos2d-x
+export ANT_ROOT=/usr/local/bin
+export PATH=$ANT_ROOT:$PATH
