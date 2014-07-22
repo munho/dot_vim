@@ -94,19 +94,6 @@ Bundle 'L9'
 Bundle 'tpope/vim-repeat'
 "
 " ------------------------------------------------------Munho.begin
-" http://majutsushi.github.com/tagbar/
-Bundle 'Tagbar'
-nmap <F8> :TagbarToggle<CR>
-" YouCompleteMe
-"Bundle 'Valloric/YouCompleteMe'
-" vim-jsbeautify
-" http://www.vim.org/scripts/script.php?script_id=4017
-Bundle 'maksimr/vim-jsbeautify' 
-Bundle 'einars/js-beautify' 
-" set path to js-beautify file 
-let g:jsbeautify_file = fnameescape(fnamemodify(expand("<sfile>"), ":h")."/bundle/js-beautify/beautify.js")
-let g:jsbeautify_engine = "node"
-map <c-f> :call JsBeautify()<cr>
-"
+Bundle 'unite.vim'
 " ------------------------------------------------------Munho.end
 
