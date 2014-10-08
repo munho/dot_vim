@@ -33,13 +33,8 @@ export PATH="/usr/local/mysql/bin:$PATH"
 #
 # game{closure} DevKit
 #
-export PATH=$PATH:/usr/local/share/npm/bin
+#export PATH=$PATH:/usr/local/share/npm/bin
 
-
-########
-# chromium
-####
-export PATH=$PATH:~/bin/depot_tools
 
 ########
 # http://www.orzota.com/single-node-hadoop-setup-2/
@@ -114,20 +109,39 @@ alias cd....="cd ../../.."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cd-droid="cd /Volumes/DROID"
-alias cd-project="cd ~/Documents/projects"
+
+alias cdd="cd /Volumes/droid"
+alias cdu="cd ~/Documents/UBFIRST/"
+
+# Check a disk usage summary to find wasted disk space UNIX 
+# http://hints.macworld.com/article.php?story=20031008142756724
+alias dus='du -Psckx * | sort -nr'
 
 # Java tool 한글 깨짐
 alias jar='java -Dfile.encoding=utf8 sun.tools.jar.Main '
 alias keytool='java -Dfile.encoding=utf8 sun.security.tools.KeyTool '
+
+# http://brettterpstra.com/2013/02/09/quick-tip-jumping-to-the-finder-location-in-terminal/
+# cd to the path of the front Finder window
+cdf() {
+	target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+	if [ "$target" != "" ]; then
+		cd "$target"; pwd
+	else
+		echo 'No Finder window found' >&2
+	fi
+}
+
+alias f='open -a Finder ./'
+
 
 # mount the android file image
 # hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
 #function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 #function mount-droid { hdiutil attach "/Volumes/My\ Book/android.dmg" -mountpoint /Volumes/DROID; }
 #function mount-trunk { hdiutil attach "/Volumes/My\ Book/trunk.dmg.sparseimage" -mountpoint /Volumes/TRUNK; }
-function mount-droid { hdiutil attach /Volumes/My\ Book/android.dmg.sparseimage; }
-function mount-trunk { hdiutil attach /Volumes/My\ Book/trunk.dmg.sparseimage; }
+function mountdroid { hdiutil attach /Volumes/My\ Book/Documents/hd-android.dmg.sparseimage; }
+function mounttrunk { hdiutil attach /Volumes/My\ Book/Documents/hd-trunk.dmg.sparseimage; }
 
 ##
 # ssh
@@ -203,4 +217,11 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable ANT_ROOT for cocos2d-x
 export ANT_ROOT=/usr/local/bin
-export PATH=$ANT_ROOT:$PATH
+export PATH=$ANT_ROOT:$PATH:$HOME/bin/gsutil:$HOME/bin/depot_tools
+export PYTHONPATH=${PYTHONPATH}:$HOME/gsutil/third_party/boto:$HOME/gsutil
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/munho/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/Users/munho/google-cloud-sdk/completion.bash.inc'
