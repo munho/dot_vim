@@ -21,6 +21,11 @@ if has('win32') || has('win64')
 elseif has('gui_macvim')
   " MacVim
 
+  " Set height and width on Windows
+  set lines=60
+  set columns=120
+  
+  
   " Custom Menlo font for Powerline
   " From: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
   "set guifont=Menlo\ for\ Powerline:h12

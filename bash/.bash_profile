@@ -1,7 +1,16 @@
-# 
+export BOOST_INCLUDE=/usr/local/Cellar/boost/1.57.0/include
+export BOOST_LIB=/usr/local/Cellar/boost/1.57.0/lib
+export BOOST_LIB_SERIALIZATION_DEBUG=libboost_serialization-mt.dylib
+export BOOST_LIB_SERIALIZATION_RELEASE=libboost_serialization-mt.dylib
+
+export ORACLE_HOME=/usr/local/instantclient_11_2
+export PATH=$PATH:/usr/local/opt/qt5/bin
+
+#
 # android (brew)
 # http://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula
 #
+#export ANDROID_AVD_HOME=/Users/munho/.avd
 export ANDROID_SDK=/usr/local/opt/android-sdk
 export ANDROID_NDK=/usr/local/opt/android-ndk
 export ANDROID_HOME=$ANDROID_SDK
@@ -11,17 +20,26 @@ export SDK=$ANDROID_SDK
 export NDK=$ANDROID_NDK
 export PATH=~/bin:/usr/local/bin:$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
 
+# github
+export HOMEBREW_GITHUB_API_TOKEN=3d887778082c02f51bdb04187e6359f0b830651a
+
 # skia
 export ANDROID_SDK_ROOT=$ANDROID_SDK
 export TARGET_DEVICE=arm_v7
+
 # vlc-android
-export ANDROID_ABI=armeabi-v7a
-export NO_FPU=1
+# https://wiki.videolan.org/AndroidCompile/
+#export ANDROID_ABI=armeabi-v7a
+#export NO_FPU=1
 
 # cocos2d-x
 export NDK_ROOT=$ANDROID_NDK
 
 #export NODE_PATH="/usr/local/lib/node_modules"
+
+# Parallels + VAGRANT
+# http://parallels.github.io/vagrant-parallels/docs/usage.html
+export VAGRANT_DEFAULT_PROVIDER=parallels
 
 ########
 # mysql
@@ -60,12 +78,12 @@ c_green=`tput setaf 2`
 c_pink=`tput setaf 5`
 c_blue=`tput setaf 4`
 c_sgr0=`tput sgr0`
- 
+
 show_repository ()
 {
   echo -e "$(VCPROMPT_FORMAT=($(tput setaf 3)%s$(tput sgr0):$(tput setaf 6)%h$(tput sgr0)@$(tput setaf 2)%b$(tput setaf 1)%m$(tput setaf 5)%u$(tput sgr0)) vcprompt)"
 }
- 
+
 #export PS1='\[${c_cyan}\]\u\[${c_sgr0}\]@\[${c_blue}\]\h\[${c_sgr0}\]:\w\[${c_sgr0}\] $(show_repository)\n\$ '
 
 
@@ -86,6 +104,7 @@ alias al="adb logcat bad:V *:E"
 alias an="adb logcat bad:V *:E | $ANDROID_NDK/ndk-stack -sym $PROJECT_PATH/obj/local/armeabi"
 alias adb-mobile-chrome="adb forward tcp:9222 localabstract:chrome_devtools_remote"
 
+alias tw="/usr/local/bin/edit"
 alias mc="LANG=en_US.UTF-8 mc"
 alias grep="grep --color"
 alias ssh="ssh -X"
@@ -113,13 +132,16 @@ alias ....="cd ../../.."
 alias cdd="cd /Volumes/droid"
 alias cdu="cd ~/Documents/UBFIRST/"
 
-# Check a disk usage summary to find wasted disk space UNIX 
+# Check a disk usage summary to find wasted disk space UNIX
 # http://hints.macworld.com/article.php?story=20031008142756724
 alias dus='du -Psckx * | sort -nr'
 
 # Java tool 한글 깨짐
 alias jar='java -Dfile.encoding=utf8 sun.tools.jar.Main '
 alias keytool='java -Dfile.encoding=utf8 sun.security.tools.KeyTool '
+
+# http://likejazz.com/post/105818260214/git-activity
+alias gl="git activity --count 10"
 
 # http://brettterpstra.com/2013/02/09/quick-tip-jumping-to-the-finder-location-in-terminal/
 # cd to the path of the front Finder window
@@ -148,7 +170,7 @@ function mounttrunk { hdiutil attach /Volumes/My\ Book/Documents/hd-trunk.dmg.sp
 ##
 #alias ssh-test1-web="ssh -p 8025 user1@10.255.255.200"
 
-# sshfs 
+# sshfs
 function mount-web { sshfs user1@web: /Volumes/WEB1/ -p 8025; }
 
 # mysql
@@ -156,14 +178,20 @@ function mount-web { sshfs user1@web: /Volumes/WEB1/ -p 8025; }
 function mysql_forward { ssh -L 3310:127.0.0.1:3306 munho@push; }
 
 
+# http://stackoverflow.com/questions/6588390/where-is-java-home-on-osx-yosemite-10-10-mavericks-10-9-mountain-lion-10
 # http://superuser.com/questions/490425/how-do-i-switch-between-java-7-and-java-6-on-os-x-10-8-2
 # http://nemecec.blogspot.kr/2012/04/os-x-switching-java-versions-easily.html
 # usage:  setjdk 1.7
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+# or
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+# or
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 function setjdk() {
 	if [ $# -eq 0 ]; then
 		echo 'Usage: setjdk [VERSION]'
-		echo '              1.6, 1.7'
-		echo 'Example: setjdk 1.6'
+		echo '              1.6, 1.7, 1.8'
+		echo 'Example: setjdk 1.7'
 		return
 	fi
 	if [ $# -ne 0 ]; then
@@ -173,7 +201,7 @@ function setjdk() {
 		fi
 		export JAVA_HOME=`/usr/libexec/java_home -v $@`
 		export PATH=$JAVA_HOME/bin:$PATH
-	fi  
+	fi
 	echo JAVA_HOME set to $JAVA_HOME
 	java -version
 }
@@ -205,11 +233,8 @@ api_key="AIzaSyAuh3i8oKxEFVqMZH0TtJVhzm7iCyZjv8I"
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # https://github.com/gcuisinier/jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# added by Anaconda 1.9.1 installer
-#export PATH="/Users/munho/anaconda/bin:$PATH"
+#export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/munho/Desktop/Playground/cocos/cocos2d-x-3.2rc0/tools/cocos2d-console/bin
@@ -225,3 +250,5 @@ source '/Users/munho/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/Users/munho/google-cloud-sdk/completion.bash.inc'
+
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
