@@ -156,6 +156,16 @@ cdf() {
 
 alias f='open -a Finder ./'
 
+# https://code.visualstudio.com/Docs/setup
+code () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
 
 # mount the android file image
 # hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
@@ -245,10 +255,10 @@ export ANT_ROOT=/usr/local/bin
 export PATH=$ANT_ROOT:$PATH:$HOME/bin/gsutil:$HOME/bin/depot_tools
 export PYTHONPATH=${PYTHONPATH}:$HOME/gsutil/third_party/boto:$HOME/gsutil
 
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
+
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/munho/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/Users/munho/google-cloud-sdk/completion.bash.inc'
-
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
